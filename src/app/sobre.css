@@ -1,0 +1,64 @@
+
+
+.sobre-content {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sobre-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.sobre-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateX(-10px);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.stat-card h3 {
+    margin: 0 0 10px 0;
+    color: var(--accent-color);
+    font-size: 24px;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+    }
+}

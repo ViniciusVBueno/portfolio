@@ -1,12 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;900&display=swap');
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent-color: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.5);
+  --accent-purple: #8b5cf6;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='light'] {
+  --bg-primary: #eef2f6;
+  --bg-secondary: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --accent-color: #1d4ed8;
+  --accent-glow: rgba(29, 78, 216, 0.3);
+  --accent-purple: #6d28d9;
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 23, 42, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
 
 html, body {
-  background-color: #222;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  letter-spacing: 0.02em;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Scrollbar premium */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Classes comuns */
+.section {
   min-height: 100vh;
-  font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  letter-spacing: 0.04em;
-  font-weight: 400em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 20px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.snap-container {
+  width: 100%;
+}
+
+/* Animações de Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-title {
+  font-size: 48px;
+  margin-bottom: 40px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 100%;
 }
